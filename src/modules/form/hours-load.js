@@ -6,6 +6,8 @@ const hours = document.getElementById("hours")
 
 //Passa o parametro dentro de objeto para desestruturar {date}
 export function hoursLoad({ date }) {
+    //Limpa a lista de horarios
+    hours.innerHTML = ""
     const opening = openingHours.map((hour) => {
         //Recupera as horas
         const [scheduleHour] = hour.split(":")

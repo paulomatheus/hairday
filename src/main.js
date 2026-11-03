@@ -16,3 +16,4 @@ console.log(dayjs().format("HH:mm"))
 //JS
 import "./modules/form/submit.js"
 import "./modules/page-load.js"
+import "./modules/form/date-change.js"
