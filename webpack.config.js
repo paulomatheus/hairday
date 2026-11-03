@@ -39,8 +39,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, 
+                test: /\.css$/,
                 use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.js$/, // teste com regex para ver os arquivos que terminam com .js
+                exclude: /node_modules/, //nao olhar para pasta
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"],
+                    },
+                },
             },
         ],
     },
