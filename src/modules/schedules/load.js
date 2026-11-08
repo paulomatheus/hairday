@@ -14,6 +14,9 @@ export async function scheduleDay() {
     //Busca na API os agendamentos
     const dailySchedules = await scheduleFetchByDay({ date })
 
+    //Sort compara: conta negativa = a antes de b; positiva: b vem antes de a
+    dailySchedules.sort((a, b) => new Date(a.when) - new Date(b.when))
+
     //Exibe os agendamentos
     schedulesShow({ dailySchedules })
 
