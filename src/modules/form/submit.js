@@ -39,7 +39,10 @@ form.onsubmit = async (event) => {
         const when = dayjs(selectedDate.value).add(hour, "hour")
         //Gera um ID
         const id = new Date().getTime()
-
+        //Usar caso o json server estiver atualizado
+        /*
+        const id = new Date().getTime().toString //Server agora eh string e nao mais number
+        */
         //Faz o agendamento
         await scheduleNew({
             id, name, when,
